@@ -11,4 +11,5 @@ cd 2025-04-211V-flask
 ```bash
 uv sync
 uv run Flask --app main run
+uv run Flask --app main run --debug #deb:debug
 ```
