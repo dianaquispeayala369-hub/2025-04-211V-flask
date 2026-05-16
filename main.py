@@ -2,9 +2,15 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-
-base_de_datos = ["jorge","pepe","juanito"] #Modelos
-
 @app.route("/") # controlador
-def hello():
-    return render_template(template_name_or_list="index.html", datos= base_de_datos) #visualizacion o view
+def root():
+    return render_template("base.html")
+
+@app.route("/index") # controlador
+def index():
+    base_de_datos = ["jorge","pepe","juanito"] #Modelos
+    return render_template("index.html", datos= base_de_datos) #visualizacion o view
+
+@app.route("/home") # controlador
+def home():
+    return render_template("home.html")
