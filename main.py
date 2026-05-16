@@ -1,7 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
+
+base_de_datos = ["jorge","pepe","juanito"] #Modelos
+
+@app.route("/index") # controlador
 def hello():
-    return "Hello, World!"
+    return render_template(template_name_or_list="index.html", datos= base_de_datos) #visualizacion o view
